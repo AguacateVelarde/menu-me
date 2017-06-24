@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="home">
+
+<ion-list  >
+  <ion-item  *ngFor="let item of dataProductos | async"   (click)="pushlist( 'pedido', item.nombre, item.precio )">
+      <ion-avatar text-start class="avatar">
+        <img src="assets/img/{{ item.img }}.jpeg">
+      </ion-avatar>
+        {{ item.nombre }} 
+    <div class="item-note" item-right>
+   <p item-end>{{ item.precio | currency:'USD':true:'2.2-2' }}</p>
+    </div>
+  </ion-item >
+
+
+</ion-list>
+<button ion-button color="danger" (click)="logout()">Cerrar sesión</button>
+
+</ion-content>

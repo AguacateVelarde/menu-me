@@ -1,0 +1,34 @@
+
+
+
+<ion-content  class="auth-home">
+  <div class="logo">
+    <div class="logo-icon">
+      Menu<span style="color:#FFAD3B;">&</span>Me
+    </div>
+  </div>
+
+  <button ion-button block icon-left class="facebook-btn" (click)="loginUserWithFacebook()">
+    <ion-icon  side="left" name="logo-facebook"></ion-icon>
+     <p> Continuar con Facebook</p>
+  </button>
+
+  <button ion-button color="light" class="sign-up-btn" (click)="openSignUpPage()">Regístrate</button>
+  <button ion-button color="light" class="log-in-btn" (click)="openLoginPage()">Iniciar Sesión</button>
+
+  <button ion-button block icon-left class="invitado-btn" (click)="openHomePage()" color="secondary">
+    <ion-icon  side="left" name="ion-home"></ion-icon>
+     <p> Iniciar como Invitado</p>
+  </button>
+
+  <div padding class="error" *ngIf="error">
+    <p>{{error}}</p>
+  </div>
+
+  <div class="terms-of-use-txt">
+    By Signing up you agree to the
+    <b (click)="openTermsOfService()">Terms of Service</b>
+  </div>
+
+
+</ion-content>
