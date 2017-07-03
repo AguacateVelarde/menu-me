@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>carrito</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 class="pedido-h"> Tu Pedido </h1>
+  <ion-list>
+    <ion-item *ngFor="let item of getMenu()">
+
+      <ion-avatar text-start class="avatar">
+        <img src="assets/img/{{ item.img }}.jpeg">
+      </ion-avatar>
+
+      <div class="item-note" item-right>
+        {{ item.nombre }}
+        <p item-end>{{ item.precio | currency:'USD':true:'2.2-2' }}</p>
+      </div>
+
+    </ion-item>
+    <div style="padding-top:10px;"><h2>Costo Total:  <strong>{{ getCostoTotal() | currency:'USD':true:'2.2-2' }}</strong></h2></div>
+  </ion-list>
+<button ion-button full (click)="pedir()" [hidden]="getCostoTotal()<= 0"> ¡ Pedir ! </button>
+<button ion-button full color="dark" [hidden]="! getCostoTotal()<= 0"> ¡ Pedir ! </button>
+</ion-content>

@@ -6,4 +6,32 @@
     width: 36px;
     height: 36px;
   }
+
+
 }
+#notification-button {
+           position: relative;
+           width: 58px;
+           top:-1px;
+           right: 0.5px;
+           overflow: visible!important;
+           text-align: left;
+       }
+
+
+  #notifications-badge {
+           background-color: red;
+           position: absolute;
+           top: -3px;
+           right: -3px;
+           border-radius: 100%;
+           width: 16px;
+           height: 15px;
+           text-align: center;
+          padding: 1px;
+          font-size: 10px;
+
+       }
+  #cartN{
+    zoom: 1.8;
+  }

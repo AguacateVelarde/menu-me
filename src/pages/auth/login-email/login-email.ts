@@ -4,6 +4,8 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 import { SignUpPage } from '../sign-up/sign-up';
 import { AuthProvider } from '../../../providers/auth';
 
+import{ HomePage } from '../../home/home';
+
 @Component({
   templateUrl: 'login-email.html',
   selector: 'login-email',
@@ -41,6 +43,7 @@ export class LoginEmailPage {
         loading.dismiss();
         // The auth subscribe method inside the app.ts will handle the page switch to home
       }, 1000);
+        this.navCtrl.push( HomePage );
     }, err => {
       setTimeout(() => {
         loading.dismiss();

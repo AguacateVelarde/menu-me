@@ -10,12 +10,16 @@ import { SignUpPage } from '../pages/auth/sign-up/sign-up';
 import { HomePage } from '../pages/home/home';
 import { TermsOfServicePage } from '../pages/terms-of-service/terms-of-service';
 import { JumpPage } from '../pages/jump/jump';
+import { CarritoPage } from '../pages/carrito/carrito';
+import { CardPage } from '../pages/card/card';
 
 import { AngularFireModule } from 'angularfire2';
 
 // Providers
 import { DataProvider } from '../providers/data';
 import { AuthProvider } from '../providers/auth';
+import { Pedido } from '../providers/pedido';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC9t39KkbZK-bQKqY0vNL75-UoaZL4s6lo",
@@ -35,7 +39,9 @@ export const firebaseConfig = {
     SignUpPage,
     HomePage,
     TermsOfServicePage,
-    JumpPage
+    JumpPage,
+    CarritoPage,
+    CardPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -50,8 +56,10 @@ export const firebaseConfig = {
     SignUpPage,
     HomePage,
     TermsOfServicePage,
-    JumpPage
+    JumpPage,
+    CarritoPage,
+    CardPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, DataProvider, AuthProvider]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, DataProvider, AuthProvider, Pedido]
 })
 export class AppModule {}
